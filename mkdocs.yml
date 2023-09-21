@@ -1,0 +1,59 @@
+site_name: Data Migration Validation Tool
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      linenums: 1
+      auto_title: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+plugins:
+  - search:
+      lang: en
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            docstring_options:
+              ignore_init_summary: true
+              merge_init_into_class: true
+            show_docstring_description: true
+            allow_inspection: false
+            show_root_full_path: true
+            filters:
+              - "!^_"
+
+
+nav:
+  - Data Migration Validation Tool: index.md
+  - Tutorials: tutorials.md
+  - Getting Started: getting-started.md
+  - Reference: reference.md
+  - Documentation:
+      - Data Sources:
+        - Data Source: Data Sources/datasource.md
+        - SQLAlchemy Data Source: Data Sources/sql/sqlalchemy_datasource.md
+        - BigQuery Data Source: Data Sources/sql/bigquery_datasource.md
+      - Data Checks:
+        - Data Quality Checks: Data Checks/Data Quality Checks/data_quality_checks.md
+#          - Value Checks:
+#            - Data Checks/Data Quality Checks/value_check.md
+#            - Empty Table Check: Data Checks/Data Quality Checks/empty_table_check.md
+#            - Table Count Check: Data Checks/Data Quality Checks/table_count_check.md
+#          - Column Checks:
+#            - Data Checks/Data Quality Checks/column_check.md
+#            - Unique Column Value Check: Data Checks/Data Quality Checks/unique_column_value_check.md
+#            - Column Value to be in Range Check: Data Checks/Data Quality Checks/check_column_value_to_be_in_range.md
+#            - Column Value belong to a Set Check: Data Checks/Data Quality Checks/check_column_value_belong_to_set.md
